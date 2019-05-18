@@ -1,8 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import Team from "../components/Teams";
-import { deleteTeam, getTeam } from "../actions";
-import { EDIT_TEAM } from "../actions/types";
+import { destroy, getTeam } from "../model/actions/team";
 
 function ListTeam({ teams, onDelete, onEdit }) {
   if (!teams.length) {
@@ -27,14 +26,14 @@ function ListTeam({ teams, onDelete, onEdit }) {
 const mapStateToProps = state => {
   console.log("ParamPropsLisTTeam", state);
   return {
-    teams: state.teams
+    teams: state.team.teams
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
     onDelete: id => {
-      dispatch(deleteTeam(id));
+      dispatch(destroy(id));
     },
     onEdit: id => {
       dispatch(getTeam(id));

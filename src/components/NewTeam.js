@@ -17,9 +17,6 @@ class NewTeam extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    console.log("NEXT", nextProps);
-    console.log("NewProps", nextProps.team)
-    console.log("OldProps", this.props.team)
     this.setState({ name: nextProps.team.name });
     this.setState({ country: nextProps.team.country });
   }

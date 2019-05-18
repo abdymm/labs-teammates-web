@@ -1,11 +1,13 @@
 import { connect } from "react-redux";
-import { create } from "../actions";
+import { create } from "../model/actions/team";
 import NewTeam from "../components/NewTeam";
 
 const mapStateToProps = (state, props) => {
-  if (props.match) {
+  console.log("Create", state.team);
+  console.log("props.match", props.match);
+  if (props.match.path!="/") {
     return {
-      team: state.teams.find(item => item._id === props.match.params._id)
+      team: state.team.teams.find(team => team._id === props.match.params._id)
     };
   }
   return { team: null };

@@ -1,8 +1,8 @@
 // index.js
 
 import { combineReducers } from "redux";
-import teams from "./teamReducer";
+import team from "./teamReducer";
 
 export default combineReducers({
-  teams: teams
+  team
 });

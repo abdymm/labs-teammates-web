@@ -25,6 +25,7 @@ class App extends Component {
             <div className="col-md-12">
               <Switch>
                 <Route path="/:_id" component={CreateTeam} />
+                <Route path="/" component={CreateTeam} />
               </Switch>
             </div>
             <div className="col-md-12">
